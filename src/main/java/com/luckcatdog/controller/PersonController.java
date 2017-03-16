@@ -2,6 +2,7 @@ package com.luckcatdog.controller;
 
 import com.luckcatdog.dao.PersonDao;
 import com.luckcatdog.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
