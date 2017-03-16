@@ -3,14 +3,16 @@ package com.luckcatdog.dao;
 import com.luckcatdog.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 
 /**
  * Created by LuckCatDog
  * Date: 2017/3/16
  * Time: 16:59
  */
-public interface PersonDao extends JpaRepository<Person, Long> {
+public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    Person findUserByName(String username);
+    List<Person> findByUsername(String username);
 
 }
