@@ -26,4 +26,9 @@ public class PersonController {
         return repository.findByUsername(username);
     }
 
+    @GetMapping("/findLastUser")
+    public Person findLastUser() {
+        return repository.findLastPerson();
+    }
+
 }
