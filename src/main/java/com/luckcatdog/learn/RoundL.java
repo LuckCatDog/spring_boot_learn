@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 public class RoundL {
 
     public static BigDecimal getRoundLValue(double value) {
-        return new BigDecimal(value).setScale(3).setScale(2, BigDecimal.ROUND_HALF_EVEN);
+        return (new BigDecimal(value).setScale(3, BigDecimal.ROUND_DOWN)).setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 
     public static BigDecimal getRoundLValue(float value) {
-        return new BigDecimal(value).setScale(3).setScale(2, BigDecimal.ROUND_HALF_EVEN);
+        return (new BigDecimal(value).setScale(3, BigDecimal.ROUND_DOWN)).setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 }
