@@ -1,12 +1,13 @@
 package com.luckcatdog.controller;
 
-import com.luckcatdog.dao.PersonDao;
+import com.luckcatdog.dao.PersonRepository;
 import com.luckcatdog.model.Person;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by LuckCatDog
@@ -18,11 +19,16 @@ import javax.annotation.Resource;
 public class PersonController {
 
     @Resource
-    private PersonDao dao;
+    private PersonRepository repository;
 
     @GetMapping("/findUserByName")
-    public Person findUserByName(String username) {
-        return dao.findUserByName(username);
+    public List<Person> findUserByName(String username) {
+        return repository.findByUsername(username);
+    }
+
+    @GetMapping("/findLastUser")
+    public Person findLastUser() {
+        return repository.findLastPerson();
     }
 
 }
